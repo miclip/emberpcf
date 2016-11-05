@@ -13,9 +13,6 @@
       UAA_CONFIG_YAML: |
         uaa.url: http://emberpcf-uaa.cfapps.io
         login.url: http://emberpcf-uaa.cfapps.io
-        smtp:
-          host: smtp.sendgrid.net
-          port: 2525
         oauth:
           clients:
               admin:    
@@ -26,4 +23,4 @@
                   resource-ids: clients
     services: 
       - mysql-dev
-      - sendgrid-dev
+      - smtp-dev

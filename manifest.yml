@@ -16,10 +16,14 @@
         smtp:
           host: smtp.sendgrid.net
           port: 2525
-          user: ruqhadvhBQ
-          password: Dczs2zVQC6S28705
-        admin:
-          client_secret: Dczs2zVQC6S28705
+        oauth:
+          clients:
+              admin:    
+                  authorized-grant-types: client_credentials
+                  scope: read,write,password
+                  authorities: ROLE_CLIENT,ROLE_ADIN
+                  id: admin
+                  resource-ids: clients
     services: 
       - mysql-dev
       - sendgrid-dev

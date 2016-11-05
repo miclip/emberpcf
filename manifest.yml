@@ -1,26 +1,37 @@
 ---
   applications:
-  - name: emberpcf-uaa
+#  - name: emberpcf-uaa
+#    memory: 1024M
+#    instances: 1
+#    buildpack: java_buildpack
+#    host: emberpcf-uaa
+#    path: ./uaa/uaa/build/libs/cloudfoundry-identity-uaa-3.8.0.war
+#    env:
+#      JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '[enabled: true]'
+#      JBP_CONFIG_TOMCAT: '{tomcat: { version: 8.0.+ }}'
+#      SPRING_PROFILES_ACTIVE: mysql
+#      UAA_CONFIG_YAML: |
+#        uaa.url: http://emberpcf-uaa.cfapps.io
+#        login.url: http://emberpcf-uaa.cfapps.io
+#        oauth:
+#          clients:
+#              admin:    
+#                  authorized-grant-types: client_credentials
+#                  scope: read,write,password
+#                  authorities: ROLE_CLIENT,ROLE_ADIN
+#                  id: admin
+#                  resource-ids: clients
+#    services: 
+#      - mysql-dev
+#      - smtp-dev
+  - name: emberpcf-api
     memory: 1024M
     instances: 1
-    buildpack: java_buildpack
-    host: emberpcf-uaa
-    path: ./uaa/uaa/build/libs/cloudfoundry-identity-uaa-3.8.0.war
+    path: ./api
+    buildpack: dotnet_core_buildpack
+    host: emberpcf-api
     env:
-      JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '[enabled: true]'
-      JBP_CONFIG_TOMCAT: '{tomcat: { version: 8.0.+ }}'
-      SPRING_PROFILES_ACTIVE: mysql
-      UAA_CONFIG_YAML: |
-        uaa.url: http://emberpcf-uaa.cfapps.io
-        login.url: http://emberpcf-uaa.cfapps.io
-        oauth:
-          clients:
-              admin:    
-                  authorized-grant-types: client_credentials
-                  scope: read,write,password
-                  authorities: ROLE_CLIENT,ROLE_ADIN
-                  id: admin
-                  resource-ids: clients
+      ASPNETCORE_ENVIRONMENT: development
     services: 
       - mysql-dev
       - smtp-dev

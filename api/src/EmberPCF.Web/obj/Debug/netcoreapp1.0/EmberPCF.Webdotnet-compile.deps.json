@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0/",
-    "signature": "c3850c3ca81767159061870932e8df248028ebc5"
+    "signature": "92eaf549e8d949ce151f9341af805e32041b6139"
   },
   "compilationOptions": {
     "defines": [
@@ -23,13 +23,15 @@
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
           "Microsoft.Extensions.Configuration.Json": "1.0.0",
+          "Microsoft.Extensions.Configuration.CommandLine": "1.0.0",
           "Microsoft.Extensions.Logging": "1.0.0",
           "Microsoft.Extensions.Logging.Console": "1.0.0",
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
           "NJsonApiCore": "1.0.0",
           "NJsonApiCore.Web.MVCCore": "1.0.0",
-          "Microsoft.AspNetCore.StaticFiles": "1.0.0"
+          "Microsoft.AspNetCore.StaticFiles": "1.0.0",
+          "Steeltoe.Extensions.Configuration.CloudFoundry": "1.0.0-rc1"
         },
         "compile": {
           "EmberPCF.Web.dll": {}
@@ -711,6 +713,14 @@
           "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.dll": {}
         }
       },
+      "Microsoft.Extensions.Configuration.CommandLine/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.1/Microsoft.Extensions.Configuration.CommandLine.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration.EnvironmentVariables/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "1.0.0"
@@ -1211,6 +1221,21 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.0.1",
           "Microsoft.NETCore.Targets": "1.0.1"
+        }
+      },
+      "Steeltoe.Extensions.Configuration.CloudFoundry/1.0.0-rc1": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "1.0.0",
+          "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
+          "Microsoft.Extensions.Configuration.Json": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Options": "1.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Steeltoe.Extensions.Configuration.CloudFoundry.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -2574,13 +2599,15 @@
           "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
           "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
           "Microsoft.Extensions.Configuration.Json": "1.0.0",
+          "Microsoft.Extensions.Configuration.CommandLine": "1.0.0",
           "Microsoft.Extensions.Logging": "1.0.0",
           "Microsoft.Extensions.Logging.Console": "1.0.0",
           "Microsoft.Extensions.Logging.Debug": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
           "NJsonApiCore": "1.0.0",
           "NJsonApiCore.Web.MVCCore": "1.0.0",
-          "Microsoft.AspNetCore.StaticFiles": "1.0.0"
+          "Microsoft.AspNetCore.StaticFiles": "1.0.0",
+          "Steeltoe.Extensions.Configuration.CloudFoundry": "1.0.0-rc1"
         },
         "runtime": {
           "EmberPCF.Web.dll": {}
@@ -3262,6 +3289,14 @@
           "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.dll": {}
         }
       },
+      "Microsoft.Extensions.Configuration.CommandLine/1.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "1.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.Extensions.Configuration.CommandLine.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration.EnvironmentVariables/1.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "1.0.0"
@@ -3753,6 +3788,21 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.0.1",
           "Microsoft.NETCore.Targets": "1.0.1"
+        }
+      },
+      "Steeltoe.Extensions.Configuration.CloudFoundry/1.0.0-rc1": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "1.0.0",
+          "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
+          "Microsoft.Extensions.Configuration.Json": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Options": "1.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Steeltoe.Extensions.Configuration.CloudFoundry.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -5263,6 +5313,11 @@
       "serviceable": true,
       "sha512": "sha512-kK8QuBcPQtmKJCkC9enc1uMRFa++mPTuVNm2K5jDVXcAYKRBcFSbdEBvIe1JIgA6dEsAQeqjfHfKSaUJ8f5NFQ=="
     },
+    "Microsoft.Extensions.Configuration.CommandLine/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ofxSCmUb2phEzIF0J+ZZaMLvVEgSENjIQMghY/bLePXdAH2Q7Lpl1q2fMqkp5rYc6gnkUsup7a04VGfKqwnpsA=="
+    },
     "Microsoft.Extensions.Configuration.EnvironmentVariables/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -5477,6 +5532,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-gZ8GbeLifA/Ggg0jYGDl5tlncT8ASikn6DA25ohij4nr/YrqVSihgf9ourwTZPYP+y4fURlVSYCsQbPQnR2XiA=="
+    },
+    "Steeltoe.Extensions.Configuration.CloudFoundry/1.0.0-rc1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sY1L1SQZTWjZKkwwe7cG3DOYdZfZeWG8EL8vlafewihFbf3FJ+PVZzs57816ogXKHkMmR8Jgv4QAG9TCdZUUOA=="
     },
     "System.AppContext/4.1.0": {
       "type": "package",

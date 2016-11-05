@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.AspNetCore.StaticFiles.Infrastructure;
 using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json.Serialization;
+using Steeltoe.Extensions.Configuration;
 using NJsonApi.Web.MVCCore.Serialization;
 using NJsonApi.Web.MVCCore;
 using NJsonApi.Web;
@@ -22,10 +23,11 @@ namespace EmberPCF.Web
     {
         public Startup(IHostingEnvironment env)
         {
-            var builder = new Microsoft.Extensions.Configuration.ConfigurationBuilder()
+             var builder = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json")
-                .AddEnvironmentVariables();
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddEnvironmentVariables()
+                .AddCloudFoundry();
             Configuration = builder.Build();
         }
 

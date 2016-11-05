@@ -915,6 +915,18 @@
           "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.dll": {}
         }
       },
+      "Microsoft.Extensions.Configuration.CommandLine/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.1/Microsoft.Extensions.Configuration.CommandLine.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.Extensions.Configuration.CommandLine.dll": {}
+        }
+      },
       "Microsoft.Extensions.Configuration.EnvironmentVariables/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -1599,6 +1611,25 @@
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Steeltoe.Extensions.Configuration.CloudFoundry/1.0.0-rc1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "1.0.0",
+          "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
+          "Microsoft.Extensions.Configuration.Json": "1.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Options": "1.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Steeltoe.Extensions.Configuration.CloudFoundry.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Steeltoe.Extensions.Configuration.CloudFoundry.dll": {}
         }
       },
       "System.AppContext/4.1.0": {
@@ -4200,6 +4231,17 @@
         "lib/netstandard1.1/Microsoft.Extensions.Configuration.Binder.xml"
       ]
     },
+    "Microsoft.Extensions.Configuration.CommandLine/1.0.0": {
+      "sha512": "ofxSCmUb2phEzIF0J+ZZaMLvVEgSENjIQMghY/bLePXdAH2Q7Lpl1q2fMqkp5rYc6gnkUsup7a04VGfKqwnpsA==",
+      "type": "package",
+      "path": "Microsoft.Extensions.Configuration.CommandLine/1.0.0",
+      "files": [
+        "Microsoft.Extensions.Configuration.CommandLine.1.0.0.nupkg.sha512",
+        "Microsoft.Extensions.Configuration.CommandLine.nuspec",
+        "lib/netstandard1.1/Microsoft.Extensions.Configuration.CommandLine.dll",
+        "lib/netstandard1.1/Microsoft.Extensions.Configuration.CommandLine.xml"
+      ]
+    },
     "Microsoft.Extensions.Configuration.EnvironmentVariables/1.0.0": {
       "sha512": "A0yqS98VtPNlFkFI7YBlwkAekUHE/9mMeNc+K4RmgTjCrskuk6pX3LGhDU7aD5CPYc9Px7M2To/2u4xDSnRikg==",
       "type": "package",
@@ -4794,6 +4836,17 @@
         "lib/netstandard1.0/_._",
         "runtime.native.System.Security.Cryptography.4.0.0.nupkg.sha512",
         "runtime.native.System.Security.Cryptography.nuspec"
+      ]
+    },
+    "Steeltoe.Extensions.Configuration.CloudFoundry/1.0.0-rc1": {
+      "sha512": "sY1L1SQZTWjZKkwwe7cG3DOYdZfZeWG8EL8vlafewihFbf3FJ+PVZzs57816ogXKHkMmR8Jgv4QAG9TCdZUUOA==",
+      "type": "package",
+      "path": "Steeltoe.Extensions.Configuration.CloudFoundry/1.0.0-rc1",
+      "files": [
+        "Steeltoe.Extensions.Configuration.CloudFoundry.1.0.0-rc1.nupkg.sha512",
+        "Steeltoe.Extensions.Configuration.CloudFoundry.nuspec",
+        "lib/net451/Steeltoe.Extensions.Configuration.CloudFoundry.dll",
+        "lib/netstandard1.3/Steeltoe.Extensions.Configuration.CloudFoundry.dll"
       ]
     },
     "System.AppContext/4.1.0": {
@@ -9318,6 +9371,7 @@
       "Microsoft.AspNetCore.Server.IISIntegration >= 1.0.0",
       "Microsoft.AspNetCore.Server.Kestrel >= 1.0.0",
       "Microsoft.AspNetCore.StaticFiles >= 1.0.0",
+      "Microsoft.Extensions.Configuration.CommandLine >= 1.0.0",
       "Microsoft.Extensions.Configuration.EnvironmentVariables >= 1.0.0",
       "Microsoft.Extensions.Configuration.FileExtensions >= 1.0.0",
       "Microsoft.Extensions.Configuration.Json >= 1.0.0",
@@ -9326,8 +9380,9 @@
       "Microsoft.Extensions.Logging.Debug >= 1.0.0",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.0.0",
       "Microsoft.NETCore.App >= 1.0.0",
-      "NJsonApiCore >= 1.0.6-*",
-      "NJsonApiCore.Web.MVCCore >= 1.0.6-*"
+      "NJsonApiCore >= 1.0.0-*",
+      "NJsonApiCore.Web.MVCCore >= 1.0.0-*",
+      "Steeltoe.Extensions.Configuration.CloudFoundry >= 1.0.0-*"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

@@ -5,7 +5,7 @@
     instances: 1
     buildpack: java_buildpack
     host: emberpcf-uaa
-    path: ./uaa/build/libs/cloudfoundry-identity-uaa-3.8.0.war
+    path: ./uaa/uaa/build/libs/cloudfoundry-identity-uaa-3.8.0.war
     env:
       JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '[enabled: true]'
       JBP_CONFIG_TOMCAT: '{tomcat: { version: 8.0.+ }}'

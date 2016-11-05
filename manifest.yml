@@ -1,0 +1,25 @@
+---
+  applications:
+  - name: emberpcf-uaa
+    memory: 1024M
+    instances: 1
+    buildpack: java_buildpack
+    host: emberpcf-uaa
+    path: ./uaa/build/libs/cloudfoundry-identity-uaa-3.8.0.war
+    env:
+      JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '[enabled: true]'
+      JBP_CONFIG_TOMCAT: '{tomcat: { version: 8.0.+ }}'
+      SPRING_PROFILES_ACTIVE: mysql
+      UAA_CONFIG_YAML: |
+        uaa.url: http://emberpcf-uaa.cfapps.io
+        login.url: http://emberpcf-uaa.cfapps.io
+        smtp:
+          host: smtp.sendgrid.net
+          port: 2525
+          user: ruqhadvhBQ
+          password: Dczs2zVQC6S28705
+        admin:
+          client_secret: Dczs2zVQC6S28705
+    services: 
+      - mysql-dev
+      - sendgrid-dev

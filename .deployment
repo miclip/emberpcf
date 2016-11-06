@@ -1,2 +1,2 @@
 [config]
-project = ./api/src/EmberPCF.Web
+project = ./api/EmberPCF.Web

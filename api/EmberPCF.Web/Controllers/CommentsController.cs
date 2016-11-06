@@ -20,5 +20,12 @@ namespace EmberPCF.Web.Controllers
         {
             return new ObjectResult(StaticPersistentStore.Comments.Single(w => w.Id == id));
         }
+
+        [HttpGet("/comments/{commentId}/author")]
+        public IActionResult GetComments(int commentId)
+        {
+            return new ObjectResult(StaticPersistentStore.Comments.Single(a=>a.Id == commentId).Author);
+        }
+        
     }
 }

@@ -46,5 +46,17 @@ namespace EmberPCF.Web.Controllers
             StaticPersistentStore.Articles.RemoveAll(x => x.Id == id);
             return new NoContentResult();
         }
+
+        [HttpGet("/articles/{articleId}/comments")]
+        public IEnumerable<Comment> GetComments(int articleId)
+        {
+            return StaticPersistentStore.Articles.Single(a=>a.Id == articleId).Comments;
+        }
+
+        [HttpGet("/articles/{articleId}/author")]
+        public IActionResult GetAuthor(int articleId)
+        {
+            return new ObjectResult(StaticPersistentStore.Articles.Single(a=>a.Id == articleId).Author);
+        }
     }
 }

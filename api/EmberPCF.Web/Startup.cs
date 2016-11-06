@@ -47,7 +47,7 @@ namespace EmberPCF.Web
                     options.OutputFormatters.Insert(0, new JsonApiOutputFormatter(nJsonApiConfig));
                     options.InputFormatters.OfType<JsonInputFormatter>().First().SupportedMediaTypes.Add(new MediaTypeHeaderValue("application/vnd.api+json"));
                 });
-           
+            services.AddRouting();
             services.AddSingleton<ILinkBuilder, LinkBuilder>();
             services.AddSingleton(nJsonApiConfig.GetJsonSerializer());
             services.AddSingleton<IJsonApiTransformer, JsonApiTransformer >();
@@ -69,9 +69,10 @@ namespace EmberPCF.Web
                    .AllowAnyMethod()
             );
 
-
             app.UseMvc();
         }
+
+
 
     }
 }

@@ -1,0 +1,7 @@
+<p>Article View</p>
+
+<ul>
+  {{#each model as |article|}}
+    <li>{{article.title}} {{#link-to "comments"}}comments{{/link-to}}</li>
+  {{/each}}
+</ul>

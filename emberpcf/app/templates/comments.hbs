@@ -1,0 +1,7 @@
+<p>Comments View</p>
+
+<ul>
+  {{#each model as |comment|}}
+    <li>{{comment.body}}  {{comment.author.firstName}}</li>
+  {{/each}}
+</ul>

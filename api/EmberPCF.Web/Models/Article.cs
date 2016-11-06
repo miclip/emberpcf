@@ -23,6 +23,8 @@ namespace EmberPCF.Web.Models
 
         public Person Author { get; set; }
 
+        public string Body {get;set;}
+
         public List<Comment> Comments { get; set; }
     }
 }

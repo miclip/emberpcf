@@ -1,7 +1,5 @@
 ﻿using EmberPCF.Web.Controllers;
 using EmberPCF.Web.Models;
-using NJsonApi.Web.MVCCore;
-using NJsonApi.Web;
 using NJsonApi;
 
 namespace EmberPCF.Web

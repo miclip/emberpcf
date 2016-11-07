@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using NJsonApi.Serialization.Representations.Resources;
-using System.Collections.Generic;
 
 namespace NJsonApi.Serialization
 {

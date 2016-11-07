@@ -1,7 +1,5 @@
 ﻿using System;
 using Humanizer;
-using System.Globalization;
-using NJsonApi.Utils;
 
 namespace NJsonApi.Conventions.Impl
 {

@@ -9,7 +9,6 @@ using System;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
-using NJsonApi.Infrastructure;
 
 namespace NJsonApi.Web
 {

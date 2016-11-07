@@ -1,7 +1,6 @@
 ﻿using System.Buffers;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Net.Http.Headers;
-using Newtonsoft.Json;
 
 namespace NJsonApi.Web.MVCCore
 {

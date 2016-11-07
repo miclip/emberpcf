@@ -3,7 +3,6 @@ using Newtonsoft.Json.Linq;
 using NJsonApi.Serialization.Representations;
 using NJsonApi.Serialization.Representations.Resources;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace NJsonApi.Serialization.Documents
 {

@@ -1,0 +1,32 @@
+{
+    "version": "0.1.0",
+    "command": "dotnet",
+    "isShellCommand": true,
+    "args": [],
+    "tasks": [
+         {
+            "taskName": "build",
+            "args": [
+                "${workspaceRoot}/NJsonApiCore/project.json"
+            ],
+            "isBuildCommand": true,
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "build",
+            "args": [
+                "${workspaceRoot}/NJsonApiCore.Web.MVCCore/project.json"
+            ],
+            "isBuildCommand": true,
+            "problemMatcher": "$msCompile"
+        },
+         {
+            "taskName": "build",
+            "args": [
+                "${workspaceRoot}/EmberPCF.Web/project.json"
+            ],
+            "isBuildCommand": true,
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

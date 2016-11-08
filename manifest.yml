@@ -17,10 +17,16 @@
           clients:
               admin:    
                   authorized-grant-types: client_credentials
-                  scope: read,write,password
+                  scope: read,write,password,secret
                   authorities: ROLE_CLIENT,ROLE_ADIN
+                  secret: changeme
                   id: admin
                   resource-ids: clients
+        smtp:
+          host: ${vcap:services:smtp-dev:credentials:hostname}
+          port: 2525
+          user: ${vcap:services:smtp-dev:credentials:username}
+          password: ${vcap:services:smtp-dev:credentials:password}
     services: 
       - mysql-dev
       - smtp-dev

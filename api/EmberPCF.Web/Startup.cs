@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Net.Http.Headers;
 using Steeltoe.Extensions.Configuration;
+using Steeltoe.Security.Authentication.CloudFoundry;
 using NJsonApi.Serialization;
 using NJsonApi.Web.MVCCore.Serialization;
 using NJsonApi.Web.MVCCore;
@@ -31,6 +32,14 @@ namespace EmberPCF.Web
         public void ConfigureServices(IServiceCollection services)
         {
             var nJsonApiConfig = NJsonApiConfiguration.BuildConfiguration();
+
+            services.AddCloudFoundryJwtAuthentication(Configuration);
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("testgroup", policy => policy.RequireClaim("scope", "testgroup"));
+                options.AddPolicy("testgroup1", policy => policy.RequireClaim("scope", "testgroup1"));
+            });
 
             services.AddMvc(
                 options =>
@@ -63,7 +72,7 @@ namespace EmberPCF.Web
                    .AllowAnyHeader()
                    .AllowAnyMethod()
             );
-
+            app.UseCloudFoundryJwtAuthentication();
             app.UseMvc();
         }
 

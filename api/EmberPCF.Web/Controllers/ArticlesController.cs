@@ -3,6 +3,7 @@ using NJsonApi.Infrastructure;
 using EmberPCF.Web.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace EmberPCF.Web.Controllers
@@ -11,6 +12,7 @@ namespace EmberPCF.Web.Controllers
     public class ArticlesController : Controller
     {
         [HttpGet]
+        [Authorize(Policy = "testgroup")]
         public IEnumerable<Article> Get()
         {
             return StaticPersistentStore.Articles;
